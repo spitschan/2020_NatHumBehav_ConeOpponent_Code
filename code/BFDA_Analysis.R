@@ -75,7 +75,3 @@ dev.off()
 # when the population effect size is d=0.2?
 
 SSD(sim.H1, power=.80, boundary=c(1/10, 10), alpha = .05) #error, opened issue on Github on 05 06 20
-
-
-
-

@@ -14,7 +14,7 @@ rm(list = ls())
 if(!require(pacman)) install.packages("pacman")
 
 #----- use pacman function p_load to check all packages that you are using in this script
-pacman::p_load(ggplot2, viridis, BayesFactor, devtools)
+pacman::p_load(BayesFactor)
 
 
 ####################################################################
@@ -28,13 +28,14 @@ phaseShifts <- rnorm(NSubjects*NConditions, 0, 1)
 participantID <- factor(rep(seq(1, NSubjects), NConditions))
 condition <- c(rep(1, NSubjects), rep(2, NSubjects), rep(3, NSubjects))
 condition <- factor(condition, levels=c(1, 2, 3), labels=c("Background", "+S-(L+M)", "-S+(L+M)"))
+gender <- factor(c(rep(1, NSubjects/2), rep(2, NSubjects/2)), levels=c(1, 2), labels=c("Female", "Male"))
 
 # Set it up in a dataframe
-df <- data.frame(participantID, condition, phaseShifts)
+df <- data.frame(participantID, condition, phaseShifts, gender)
 
 #----- Step 2: Run the Bayes Factor analysis
-bf = anovaBF(phaseShifts ~ condition + participantID, data = df, 
-             whichRandom="ID")
+bf = anovaBF(phaseShifts ~ condition + participantID + gender, data = df, 
+             whichRandom=c("participantID", "gender"))
 
 #----- Step 3: Plot the BFs
 plot(bf)
