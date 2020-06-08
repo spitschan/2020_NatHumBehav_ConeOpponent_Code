@@ -1,14 +1,14 @@
 ###################################################################################
 ## Code written for Bayes Factor analysis for the "Twilight Study"               ##
 ##                                                                               ##
-## Author: MSpitschan                                                            ##
+## Author:                                                             ##
 ##                                                                               ##
 ###################################################################################
 rm(list = ls())
 
 # --- set working directory
-p <- "/Users/spitschan/Projects/2020_NatHumBehav_ConeOpponent_Code/code"
-setwd(p)
+#p <- 
+#setwd(p)
 
 #----- check if pacman is installed - if not install it
 if(!require(pacman)) install.packages("pacman")

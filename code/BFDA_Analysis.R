@@ -1,7 +1,7 @@
 ###################################################################################
 ## Code written for Bayes Factor Design Analysis "Twilight Study"                ##
 ##                                                                               ##
-## Author: CBlume                                                                ##
+## Author: 	                                                                     ##
 ## Based on https://rawgit.com/nicebread/BFDA/master/package/doc/BFDA_manual.html##
 ##                                                                               ##
 ## this simulation has been calculated using version 0.5.0 (date: 05/06/20)      ##
@@ -10,8 +10,8 @@
 rm(list = ls())
 
 # --- set working directory
-p <- "C:/Users/chris/Nextcloud/1 Forschung/16 Publications/Blume Spitschan Twilight/"
-setwd(p)
+#p <- 
+#setwd(p)
 
 #----- check if pacman is installed - if not install it
 if(!require(pacman)) install.packages("pacman")
